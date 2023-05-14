@@ -59,8 +59,10 @@
 
 .book-carousel-control.left {
   left: 20px;
+  margin-left: 10px;
 }
 
 .book-carousel-control.right {
   right: 20px;
+  margin-right: 10px;
 }

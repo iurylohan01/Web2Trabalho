@@ -1,42 +1,40 @@
-// Seleciona os elementos da galeria
-const gallery = document.querySelector('.gallery');
-const books = document.querySelectorAll('.book');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+function slide(direction) {
+  let slidesToShow = 4;
+  let slidesToScroll = 1;
+  const sliderTrack = document.querySelector(".slider-track");
+  const sliderItem = document.querySelectorAll(".slider-item");
+  const sliderItemWidth = sliderItem[0].offsetWidth;
+  const sliderContainerWidth = document.querySelector(".slider-container").offsetWidth;
+  const sliderTrackWidth = sliderItemWidth * sliderItem.length;
 
-// Define a largura de cada livro na galeria
-const bookWidth = books[0].offsetWidth;
-
-// Define a variável que mantém o índice do livro atual
-let currentIndex = 0;
-
-// Função para atualizar a posição da galeria
-const updateGalleryPosition = () => {
-  gallery.style.transform = `translateX(${-currentIndex * bookWidth}px)`;
-};
-
-// Função para avançar para o próximo livro na galeria
-const nextBook = () => {
-  currentIndex++;
-  // Se atingir o limite máximo, volta para o primeiro livro
-  if (currentIndex === books.length) {
-    currentIndex = 0;
+  if (sliderContainerWidth >= 768 && sliderContainerWidth < 1024) {
+    slidesToShow = 3;
+  } else if (sliderContainerWidth >= 576 && sliderContainerWidth < 768) {
+    slidesToShow = 2;
+  } else if (sliderContainerWidth < 576) {
+    slidesToShow = 1;
   }
-  updateGalleryPosition();
-};
 
-// Função para voltar para o livro anterior na galeria
-const prevBook = () => {
-  currentIndex--;
-  // Se atingir o limite mínimo, volta para o último livro
-  if (currentIndex < 0) {
-    currentIndex = books.length - 1;
+  const movePosition = slidesToScroll * sliderItemWidth;
+  const maxPosition = -(sliderTrackWidth - slidesToShow * sliderItemWidth);
+
+  if (direction === "next" && currentIndex < sliderItem.length - slidesToShow) {
+    currentIndex += slidesToScroll;
+  } else if (direction === "prev" && currentIndex > 0) {
+    currentIndex -= slidesToScroll;
   }
-  updateGalleryPosition();
-};
 
-// Adiciona um event listener para a seta direita
-nextBtn.addEventListener('click', nextBook);
+  if (currentIndex === 0) {
+    document.querySelector(".slider-arrow-left").classList.add("hidden");
+  } else {
+    document.querySelector(".slider-arrow-left").classList.remove("hidden");
+  }
 
-// Adiciona um event listener para a seta esquerda
-prevBtn.addEventListener('click', prevBook);
+  if (currentIndex >= sliderItem.length - slidesToShow) {
+    document.querySelector(".slider-arrow-right").classList.add("hidden");
+  } else {
+    document.querySelector(".slider-arrow-right").classList.remove("hidden");
+  }
+
+  sliderTrack.style.transform = `translateX(${currentIndex * -movePosition}px)`;
+}
