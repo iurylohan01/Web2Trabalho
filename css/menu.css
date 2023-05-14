@@ -1,0 +1,121 @@
+/* Barra de navegação */
+.menu {
+  background-color: var(--cinza2);
+  height: 55px;
+}
+
+/* Lista não ordenada */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 12px;
+}
+
+/* Item da lista */
+.menu li {
+  float: left;
+  position: relative;
+}
+
+/* Link */
+.menu a {
+  display: block;
+  color: var(--branco2);
+  text-decoration: none;
+  line-height: 53px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.menu a:hover {
+  color: var(--branco1);
+  transition: 0.4s;
+}
+
+.submenu a {
+  line-height: 26px;
+}
+
+.submenu {
+  width: 135%;
+  top: 52px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+
+/* Submenu */
+.menu .submenu {
+  position: absolute;
+  left: 0;
+  background-color: var(--branco1);
+  border: 1px solid var(--branco1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/* Submenu hover */
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* Submenu item */
+.menu .submenu li {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Submenu link */
+.menu .submenu a {
+  display: block;
+  color: var(--cinza1);
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* Submenu link hover */
+.menu .submenu a:hover {
+  background-color: var(--branco2);
+  border-radius: 10px;
+}
+
+/* Barra de pesquisa */
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -46px;
+  margin-right: 35px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  background-color: var(--branco2);
+  border: none;
+  margin-right: -3px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: var(--cinza4);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  padding: 10px 13px;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--cinza5);
+}
+
+.fa-search {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  margin-right: 5px;
+}

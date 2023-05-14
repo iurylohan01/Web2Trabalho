@@ -1,0 +1,66 @@
+.book-carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.book-carousel {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.book-item {
+  flex: 0 0 calc(25% - 20px);
+  margin-right: 20px;
+  text-align: center;
+}
+
+.book-item img {
+  max-width: 100%;
+}
+
+.book-item h3 {
+  font-size: 1.2em;
+  margin: 0.5em 0 0.2em 0;
+}
+
+.book-item p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.book-carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.book-carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  font-size: 1.5em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.2em;
+  cursor: pointer;
+}
+
+.book-carousel-control.left {
+  left: 20px;
+}
+
+.book-carousel-control.right {
+  right: 20px;
+}

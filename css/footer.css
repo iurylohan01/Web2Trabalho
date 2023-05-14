@@ -1,0 +1,22 @@
+/* Estilos do rodapé */
+footer {
+    background-color: var(--cinza2);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.msg-footer {
+    font-size: 12px;
+    color: var(--cinza-claro);
+}
+
+.msg-footer u:hover {
+    color: var(--branco1);
+    transition: 0.4s;
+    text-decoration: underline;
+}
+
+.social-media-icons {
+    padding-right: .2%;
+}

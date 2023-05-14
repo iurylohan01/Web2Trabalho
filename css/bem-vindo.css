@@ -1,0 +1,65 @@
+.apresentacao {
+  margin-top: 10vh;
+  margin-bottom: 6.5vh;
+}
+
+.princ-text {
+  text-align: center;
+  color: var(--branco1);
+}
+
+/* Dimensões dos botões */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 530px;
+  margin: 0 auto;
+}
+
+.white-button, .transparent-button {
+  width: 242px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Botão branco */
+.white-button {
+  background-color: var(--cinza3);
+  color: var(--branco1);
+  border: none;
+  margin-left: 1.5vh;
+  
+}
+
+.white-button:hover {
+  transition: .5s;
+  background-color: var(--cinza2);
+}
+
+.link-termos {
+  color: var(--cinza1);
+  text-decoration: none;
+}
+
+/* Botão transparente */
+.transparent-button {
+  background-color: transparent;
+  color: var(--branco1);
+  border: 1.7px solid var(--branco1);
+  margin-right: 1.5vh;
+  height: auto;
+}
+
+.transparent-button:hover {
+  transition: .5s;
+  color: var(--cinza-claro2);
+  border: 1.3px solid var(--cinza-claro2);
+  
+}
+
+.link-feedback {
+  color: var(--branco1);
+  text-decoration: none;
+}
