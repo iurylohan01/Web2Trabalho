@@ -1,68 +1,84 @@
-.book-carousel-container {
-  max-width: 800px;
-  margin: 0 auto;
+.mini-retangular-box1{
+  width: 100%;
+  height: 5vh;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: var(--cinza2);
+  z-index: 1;
+  position: absolute;
+
+}
+.retangular-box1{
+  width: 100%;
+  height: 55vh;
+  background-color: var(--cinza3);
   position: relative;
 }
+.carousel-container1 {
+  position: relative;
+  width: 80%;
+  height: 225px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.carousel-container2 {
+  overflow: hidden;
+}
 
-.book-carousel {
+.carousel {
+  margin-top: 11vh;
   display: flex;
-  justify-content: space-between;
-  overflow-x: hidden;
-  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
 }
 
-.book-item {
-  flex: 0 0 calc(25% - 20px);
-  margin-right: 20px;
-  text-align: center;
+.book {
+  flex: 0 0 150px;
+  margin-right: 10px;
 }
 
-.book-item img {
-  max-width: 100%;
+.book img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.book-item h3 {
-  font-size: 1.2em;
-  margin: 0.5em 0 0.2em 0;
-}
-
-.book-item p {
-  font-size: 0.9em;
-  margin: 0;
-}
-
-.book-carousel-controls {
+.arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-.book-carousel-control {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  font-size: 1.5em;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 1.2em;
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  margin-top: -15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.book-carousel-control.left {
-  left: 20px;
-  margin-left: 10px;
+.arrow{
+  color: #000;
+  font-size: 20.5px;
+  position: absolute;
+  top: 70%;
+  transform: translateY(50%);
+  line-height: 35px;
+}
+  
+.left {
+  left: -70px;
+}
+.left i {
+  margin-left: 8px; /* ajuste o valor conforme necessário */
 }
 
-.book-carousel-control.right {
-  right: 20px;
-  margin-right: 10px;
+.right {
+  right: -70px;
+}
+.right i {
+  margin-left: 8px; /* ajuste o valor conforme necessário */
 }

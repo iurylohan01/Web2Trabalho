@@ -47,7 +47,7 @@
 .transparent-button {
   background-color: transparent;
   color: var(--branco1);
-  border: 1.7px solid var(--branco1);
+  border: 1.5px solid var(--branco1);
   margin-right: 1.5vh;
   height: auto;
 }
