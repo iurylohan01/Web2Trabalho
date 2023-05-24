@@ -17,6 +17,7 @@
   position: relative;
 }
 
+
 .carousel-container1 {
 	width: 100%;
 	max-width: 800px;
@@ -50,22 +51,11 @@
   border-radius: 4%;
 }
 
-.arrow-container {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-  z-index: 2;
-}
-
 .arrow {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	width: 35px;
-	height: 35px;
+	width: 38px;
+	height: 38px;
 	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -85,12 +75,12 @@
 }
 
 .arrow.left {
-  left: 10px;
+  margin-left: -38%;
   z-index: 2;
 }
 
 .arrow.right {
-  right: -30px;
+  margin-left: 133%;
   z-index: 2;
 }
 
@@ -101,4 +91,11 @@
 
 .arrow.disabled i {
 	color: #fff;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
