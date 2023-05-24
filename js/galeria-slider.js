@@ -1,25 +1,41 @@
-const carousel = document.querySelector('.carousel');
-const books = document.querySelectorAll('.book');
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
+document.addEventListener("DOMContentLoaded", function() {
+	const carousel = document.querySelector('.carousel');
+	const books = carousel.querySelectorAll('.book');
+	const containerWidth = carousel.offsetWidth;
+	const maxSlides = Math.floor(containerWidth / (books[0].offsetWidth + 10));
+	const leftArrow = document.querySelector('.arrow.left');
+	const rightArrow = document.querySelector('.arrow.right');
 
-let currentIndex = 0;
-const bookWidth = books[0].offsetWidth + 10;
+	let currentSlide = 0;
 
-function moveCarousel() {
-  carousel.style.transform = `translateX(-${currentIndex * bookWidth}px)`;
-}
+	leftArrow.addEventListener('click', function() {
+		if (currentSlide > 0) {
+			currentSlide--;
+			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 10)}px)`;
+		}
+		updateArrows();
+	});
 
-leftArrow.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    moveCarousel();
-  }
-});
+	rightArrow.addEventListener('click', function() {
+		if (currentSlide < maxSlides - 1) {
+			currentSlide++;
+			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 10)}px)`;
+		}
+		updateArrows();
+	});
 
-rightArrow.addEventListener('click', () => {
-  if (currentIndex < books.length - 7) {
-    currentIndex++;
-    moveCarousel();
-  }
+	function updateArrows() {
+		leftArrow.classList.remove('disabled');
+		rightArrow.classList.remove('disabled');
+
+		if (currentSlide === 0) {
+			leftArrow.classList.add('disabled');
+		}
+
+		if (currentSlide === maxSlides - 1) {
+			rightArrow.classList.add('disabled');
+		}
+	}
+
+	updateArrows();
 });

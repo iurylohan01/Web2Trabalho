@@ -8,77 +8,93 @@
   position: absolute;
 
 }
-.retangular-box1{
-  width: 100%;
-  height: 55vh;
-  background-color: var(--cinza3);
-  position: relative;
+.retangular-box1 {
+	width: 100%;
+	height: auto;
+  display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
 .carousel-container1 {
-  position: relative;
-  width: 80%;
-  height: 225px;
+	width: 100%;
+	max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 20px;
 }
+
 .carousel-container2 {
-  overflow: hidden;
+	position: relative;
+	overflow: hidden;
+	width: 141%;
+	height: auto;
+  display: flex;
 }
 
 .carousel {
-  margin-top: 11vh;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease;
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+  margin-top: 9vh;
+  align-items: center;
 }
 
 .book {
-  flex: 0 0 150px;
-  margin-right: 10px;
+	height: 225px;
+	margin-right: 10px;
+	border: 1px solid transparent;
+	border-radius: 4%; /* Adicione esta linha */
 }
 
-.book img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.book img{
+  border-radius: 4%;
+}
+
+.arrow-container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  z-index: 1;
-  border-radius: 50%;
-  margin-top: -15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 35px;
+	height: 35px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	z-index: 1;
+	border-radius: 50%;
+	margin-top: -15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.arrow{
-  color: #000;
-  font-size: 20.5px;
-  position: absolute;
-  top: 70%;
-  transform: translateY(50%);
-  line-height: 35px;
-}
-  
-.left {
-  left: -70px;
-}
-.left i {
-  margin-left: 8px; /* ajuste o valor conforme necessário */
+.arrow i {
+	color: #000;
+	font-size: 20.5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.right {
-  right: -70px;
+.arrow.left {
+	left: 10px;
 }
-.right i {
-  margin-left: 8px; /* ajuste o valor conforme necessário */
+
+.arrow.right {
+	right: 10px;
+}
+
+.arrow.disabled {
+	background-color: #ccc;
+	pointer-events: none;
+}
+
+.arrow.disabled i {
+	color: #fff;
 }
