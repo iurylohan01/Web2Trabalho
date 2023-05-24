@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	leftArrow.addEventListener('click', function() {
 		if (currentSlide > 0) {
 			currentSlide--;
-			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 10)}px)`;
+			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 8)}px)`;
 		}
 		updateArrows();
 	});
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	rightArrow.addEventListener('click', function() {
 		if (currentSlide < maxSlides - 1) {
 			currentSlide++;
-			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 10)}px)`;
+			carousel.style.transform = `translateX(-${currentSlide * (books[0].offsetWidth + 8)}px)`;
 		}
 		updateArrows();
 	});
